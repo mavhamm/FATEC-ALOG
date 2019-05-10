@@ -25,23 +25,30 @@ int main()
         printf("Tente de novo: ");
         }
         
-        else if (saque % 20 == 0 || saque % 50 == 0 ) {
-            if (saque > 50) {
-                n50 = saque / 50;
-                saque = saque - (n50 * 50);
-            }
-            
-            if (saque < 50) {
-                n20 = saque / 20;
-            }
-            
-            printf("%d %s 50    %d %s 20", n50, txt, n20, txt);
-            flag = 0;
-        }
-        else {
+        else if (saque % 10 != 0 || saque == 10 || saque == 30) {
             printf("Valor de saque não permitido para notas de 50 e de 20 reais\n");
             printf("Tente de novo: ");
         }
+        
+        // a partir daqui o saque é válido
+        else { 
+            // números múltiplos de 50
+            if (saque % 50 == 0) {
+                n50 = saque / 50;
+            }
+            
+            // números 40, 60 e 80
+            else if (saque == 40 || saque == 60 || saque == 80) {
+                n20 = saque / 20
+            }
+            
+            // números maiores que 80
+            
+            
+            flag = 0; // sai do loop
+            printf("%d %s 50    %d %s 20", n50, txt, n20, txt);
+        }
+        
         
     } while (flag == 1);
     
