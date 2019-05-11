@@ -48,6 +48,7 @@ int main() {
 
             // números maiores que 80
 
+            flag = 0;  // sai do loop
             printf("%d %s 50    %d %s 20\n", n50, txt, n20, txt);
         }
 
