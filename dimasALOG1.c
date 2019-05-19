@@ -1,0 +1,63 @@
+// TRABALHO #1 de ALOG | 15/05/2019
+// TEMA: Saque com notas de 50 e 20 reais apenas
+//
+// Alunos: Peter Johnny e Renan
+
+#include <stdio.h>
+#include <locale.h> // para exibir acentuação no cmd 1/2
+
+int main() {
+	
+	setlocale(LC_ALL,""); // para exibir acentuação no cmd 2/2
+	
+	// declaração de variáveis
+    char* txt1 = "notas de 50"; // variáveis alteradas antes do print
+	char* txt2 = "notas de 20";
+    int saque, n20, n50;
+    int flag = 1;
+    
+    
+    // inicialização de variáveis
+    n20 = n50 = 0;
+    
+    
+    // processamento
+    do {
+        // entrada
+        scanf("%d", &saque);
+        
+        if (saque > 1000) {
+        printf("Valor acima do saque permitido de R$ 1.000,00\n");
+        printf("Tente de novo: ");
+        }
+        
+        else if (saque % 10 != 0 || saque == 10 || saque == 30 || saque == 0) {
+            printf("Valor de saque não permitido para notas de 50 e de 20 reais\n");
+            printf("Tente de novo: ");
+        }
+        
+        // a partir daqui o saque é válido
+        else { 
+            if (saque % 50 == 10 || saque % 50 == 30) {
+				n50 = (saque/50) - 1;
+				n20 = (saque%50 + 50) / 20;
+			}
+			else {
+				n50 = saque / 50;
+				n20 = (saque - n50*50) / 20;
+			}
+			
+			if (n50 == 1)
+				txt1 = "nota de 50";
+			if (n20 == 1)
+				txt2 = "nota de 20";
+				
+            flag = 0; // sai do loop
+            
+            printf("%d %s    %d %s", n50, txt1, n20, txt2);
+        }
+        
+    } while (flag == 1);
+    
+return 0;
+}
