@@ -4,20 +4,20 @@
 // Alunos: Peter Johnny e Renan
 
 #include <stdio.h>
-#include <locale.h> // para exibir acentuaÁ„o no cmd 1/2
+#include <locale.h> // para exibir acentua√ß√£o no cmd 1/2
 
 int main() {
 	
-	setlocale(LC_ALL,""); // para exibir acentuaÁ„o no cmd 2/2
+	setlocale(LC_ALL,""); // para exibir acentua√ß√£o no cmd 2/2
 	
-	// declaraÁ„o de vari·veis
-    char* txt1 = "notas de 50"; // vari·veis alteradas antes do print
+	// declara√ß√£o de vari√°veis
+    char* txt1 = "notas de 50"; // vari√°veis alteradas antes do print
 	char* txt2 = "notas de 20";
     int saque, n20, n50;
     int flag = 1;
     
     
-    // inicializaÁ„o de vari·veis
+    // inicializa√ß√£o de vari√°veis
     n20 = n50 = 0;
     
     
@@ -32,11 +32,11 @@ int main() {
         }
         
         else if (saque % 10 != 0 || saque == 10 || saque == 30 || saque == 0) {
-            printf("Valor de saque n„o permitido para notas de 50 e de 20 reais\n");
+            printf("Valor de saque n√£o permitido para notas de 50 e de 20 reais\n");
             printf("Tente de novo: ");
         }
         
-        // a partir daqui o saque È v·lido
+        // a partir daqui o saque √© v√°lido
         else { 
             if (saque % 50 == 10 || saque % 50 == 30) {
 				n50 = (saque/50) - 1;
