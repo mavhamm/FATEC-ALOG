@@ -1,5 +1,5 @@
 '''
-Trabalho #3 de ALOG (part 1)
+Trabalho #3 de ALOG (parte 1)
 25/05/2019
 
 Renan Casagrande
